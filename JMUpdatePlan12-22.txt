@@ -1,0 +1,57 @@
+
+// All URLs
+***
+http://jamesmakes.com/vertexdrawing.html
+*NEW (ADD): 
+	http://blog.jamesmakes.com/post/35524312681/i-added-audio-to-the-arrow-spiral-sketch
+	http://blog.jamesmakes.com/post/35449302030/arrow-spiral-int-vertices-dp-cp-bp-ap-void
+http://jamesmakes.com/marimball.html
+***
+OPENGL is broken :/
+	http://jamesmakes.com/construct.html
+	http://jamesmakes.com/boxmodel.html
+Other /
+http://jamesmakes.com/land.html
+http://jamesmakes.com/freeze.html
+http://internetbeautificationproject.org/bezier.html
+http://internetbeautificationproject.org/svg.html
+http://internetbeautificationproject.org/horpart.html
+http://internetbeautificationproject.org/diamonds.html
+http://internetbeautificationproject.org/sketchpad/sketchpad.html
+http://internetbeautificationproject.org/gears.html
+http://internetbeautificationproject.org/tree.html
+http://internetbeautificationproject.org/carbon.html
+http://internetbeautificationproject.org/igears.html
+http://internetbeautificationproject.org/gears2.html
+http://jamesmakes.com/gears.html
+http://jamesmakes.com/shh.html
+http://jamesmakes.com/fridge.html
+http://internetbeautificationproject.org/saucer.html
+http://internetbeautificationproject.org/stars.html
+http://internetbeautificationproject.org/keyboard.html
+
+
+// Best Animations
+http://blog.jamesmakes.com/post/36632703267/umbrella-import-processing-opengl-int-vert
+http://blog.jamesmakes.com/post/36109220276/squish-float
+http://blog.jamesmakes.com/post/35318307477/slide-int-vertices-128-int-pointa-new
+http://blog.jamesmakes.com/post/34678468769/boxes-on-boxes-import-processing-opengl-int
+http://blog.jamesmakes.com/post/33926716365/cube-variation-on-construct-5-import
+http://blog.jamesmakes.com/post/33809581449/bezier-variation-on-construct-5-import
+http://blog.jamesmakes.com/post/33269463882/construct5-import-processing-opengl-int
+
+
+// Still images (processing?)
+http://blog.jamesmakes.com/post/33269722160/the-dithering-really-ruins-the-color-in-the-gif
+
+//Data Viz
+http://blog.jamesmakes.com/post/33591896707/my-openpaths-data-visualized-in-processing-the
+
+//Vido (Max, etc)
+http://blog.jamesmakes.com/post/3838978319/organism-patch-with-random-inputs-procedural
+http://blog.jamesmakes.com/post/3912142268/messing-around-changed-a-couple-of-parameters
+http://blog.jamesmakes.com/post/3988307925
+http://blog.jamesmakes.com/post/3992958995
+http://blog.jamesmakes.com/post/4407244926/doubled-4-5-2011
+http://blog.jamesmakes.com/post/4719154013/jan-created-a-new-hearbeat-which-ive-plugged-in
+http://blog.jamesmakes.com/post/4623039975/aprilpulse-follows-my-mouse

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        
+        var canvas = $("#paper")[0]; // get js obj
+        var c = canvas.getContext("2d");
+        
+        c.fillStyle = "#EEE";
+        c.fillRect(0, 0, canvas.width, canvas.height);        
+        
+        //triangle
+/*
+        c.strokeStyle ="black";
+        c.lineWidth = 25;
+        c.beginPath();
+        c.moveTo(50, 450);
+        c.lineTo(250, 50);
+        c.lineTo(450, 450);
+        c.lineTo(50, 450);
+        c.lineTo(250, 50);
+        c.stroke();
+*/
+        //left "A"
+        c.strokeStyle = "#666";
+        c.fillStyle = "#666";
+        c.lineWidth = 1;
+        c.beginPath();
+        c.moveTo(50, 425);
+        c.lineTo(100, 425);
+        c.lineTo(250, 100);
+        c.lineTo(325, 325);
+        c.lineTo(375, 325);        
+        c.lineTo(275, 50);        
+        c.lineTo(225, 50);
+
+        c.stroke();
+        c.closePath();
+        c.fill();        
+
+        //bottom "A"
+        c.strokeStyle = "black";
+        c.fillStyle = "black";
+        c.lineWidth = 1;
+        c.beginPath();
+        c.moveTo(250, 100);
+        c.lineTo(100, 425);
+        c.lineTo(400, 425);
+        c.lineTo(450, 375);
+        c.lineTo(175, 375);
+        c.lineTo(266, 150);
+
+        c.stroke();
+        c.closePath();
+        c.fill();                
+
+        //right "A"
+        c.strokeStyle = "white";
+        c.fillStyle = "white";
+        c.lineWidth = 1;
+        c.beginPath();
+        c.moveTo(275, 50);
+        c.lineTo(325, 50);
+        c.lineTo(450, 375);
+        c.lineTo(175, 375);
+        c.lineTo(197, 325);
+        c.lineTo(375, 325);
+
+
+        c.stroke();
+        c.closePath();
+        c.fill();   
+        
+        
+        
+
+        
+        /*
+        var velX = Math.random()*14;
+        var velY = Math.random() * -10;
+        
+        setInterval(function(){   
+        c.fillStyle = "#666";
+        c.fillRect(0, 0, canvas.width, canvas.height);
+        function makeBlackBox(){
+          
+        c.fillStyle = "black";
+        c.fillRect(Math.random() * 720,
+                   Math.random() * 720,
+                   Math.random() * 50,
+                   Math.random() * 50);
+      }
+        
+        
+       function circle(x, y, rad){
+          c.beginPath();
+          c.fillStyle = "white";
+          c.arc(x, y, rad, 0, Math.PI *2, false);
+          c.closePath();
+          c.fill();
+      }
+        
+        for (var i = 0; i < (18*5); i++){
+        makeBlackBox();
+        circle(Math.random()*720, Math.random()*720, Math.random()*10);
+        }
+        
+        }, 100);
+        
+        
+        
+      //c.beginPath
+        
+        
+             /*          
+        var posX = 0;
+        var posY = 200;
+        var velX = Math.random()*14;
+        var velY = Math.random() * -10;
+        setInterval(function(){
+          
+          c.fillStyle = "rgba(0,0,0,0.5)";
+        c.fillRect(0, 0, canvas.width, canvas.height);          
+
+          c.fillStyle = "#999";
+          c.fillRect(0, 300, canvas.width, 200);
+          
+          posX+=velX;
+          posY+=velY;
+
+          if(posY > 300){
+            posY = 300;
+            velY *= -0.5;
+            velX *= 0.5;
+          }
+          velY +=1;
+          
+          c.beginPath();
+          c.fillStyle = "white";
+          c.arc(posX, posY, 10, 0, Math.PI *2, false);
+          c.closePath();
+          c.fill();
+        }, 20);
+          */
+        
+        /*
+
+        */
+        
+        
+      });
+    </script>
+  </head>
+  <body>
+    
+    <canvas id="paper" width="500" height="500">
+    </canvas>
+    
+  </body>
+</html>

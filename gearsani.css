@@ -1,0 +1,382 @@
+@font-face {
+    font-family: 'JosefinSlabRegular';
+    src: url('JosefinSlab-Regular-webfont.eot');
+    src: url('JosefinSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('JosefinSlab-Regular-webfont.woff') format('woff'),
+         url('JosefinSlab-Regular-webfont.ttf') format('truetype'),
+         url('JosefinSlab-Regular-webfont.svg#JosefinSlabRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('Lato-Light-webfont.eot');
+    src: url('Lato-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Lato-Light-webfont.woff') format('woff'),
+         url('Lato-Light-webfont.ttf') format('truetype'),
+         url('Lato-Light-webfont.svg#LatoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+  margin 0;
+  padding: 0;
+  }
+
+h1, h2, h3 {
+	color: #AAAAAA;
+	font-family: 'JosefinSlabRegular', serif;
+	text-decoration: none;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+img,
+embed,
+object,
+video {
+            width: 100%;
+          }
+
+body {
+	background-color: #000000;
+	background-image: url('skyg.jpg');
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;	
+	font-family: 'LatoLight', sans-serif;
+	/*
+	font-size: 1em;
+	*/
+	color: #AAAAAA;	
+}
+
+#header {
+	float:left;
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: .7em;
+	line-height: .7em;	
+}
+
+#canvo {
+  float:left;
+  width: 52%;
+  min-width: 41em;
+  height: auto;
+}
+
+#canvs {
+  float:left;
+  min-width: 68em;
+  height: auto;
+}
+
+#canv {
+  float:left;
+  width: 33.333333%;
+  min-width: 29em;
+  height: auto;
+}
+
+/* Animation STUFF VVVVVVVVVVVVVVVVVVVVVV*/
+
+.gearc:hover {
+	float: left;
+	width: 31%;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: grotate;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+
+.gearc {
+	float: left;
+	width: 31%;
+}
+
+.geare:hover {
+	float: left;
+	width: 19%;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: grotate;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+
+.geare {
+	float: left;
+	width: 19%;
+}
+
+.gearg:hover {
+   	float: left; 
+	width: 19%;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: grotate;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+
+.gearg {
+	float: left;    
+	width: 19%;
+}
+
+.gearb:hover {    
+	float: left;
+	width: 31%;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: grotate;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+
+.gearb {
+	float: left;
+	width: 31%;
+}
+
+@-webkit-keyframes grotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+  
+}
+
+/* Animation STUFF ^^^^^^^^^^^^^^^^^*/
+
+h1.head {
+  float: left;
+  line-height: 2em;
+  margin-top: .4em;
+}
+
+p.head {
+	line-height: 1.5em;
+}
+
+ul.head {
+	line-height: 1.5em;	
+}
+
+#wrapper {
+  /*
+	background-color: #ffffff;
+  */
+	width: 85%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#box {
+	float: left;
+	width: 100%;
+	min-width: 320px;	
+	font-size: .7em;
+	/*
+	line-height: .7em;
+	*/
+}
+
+/*crude way to force horizontal breaks */
+.sham {
+  float: right;
+  width: 100%;
+  height: .2em;
+}
+
+.vertical {
+    min-width: 12em;
+    float: left;
+    width: 32%;
+}
+
+#info {
+    float: left;
+    width: 13em;
+    padding-right: 2em;
+    float: left;
+}
+
+.horizontal {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+/* small sketch nav */
+.figures {
+    min-width: 2em;
+    font-size: 55%;
+    /*
+    float: left;
+    */
+    width: 85%;
+    
+}
+
+/* sketch names */
+p.figcaption {
+  font-size: 2em;
+  margin-top: -4em;
+  margin-bottom: 2.15em;
+  z-index: 3;
+}
+
+p.figcaptionl {
+  font-size: 2em;
+  margin-top: -4.08em;
+  /*
+  margin-bottom: 2.15em;
+  */
+  z-index: 3;
+}
+
+p.figcaptions {
+  margin-top: -4em;
+  z-index: 3;
+}
+
+/* Link Styles */
+a:link{
+	color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	color: #999999;	
+	text-decoration: none;
+	outline: none;
+}
+
+a:active{
+	color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+}
+
+/*img overlay Links */
+a.ilist:link{
+	color: #000000;
+	background-color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+	z-index: 3;		
+}
+
+a.ilist:hover {
+	color: #333333;
+	background-color: #999999;	
+	text-decoration: none;
+	outline: none;
+	z-index: 3;		
+}
+
+a.ilist:active{
+	color: #000000;
+	background-color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+	z-index: 3;		
+}
+
+a.ilist:visited{
+	color: #000000;
+	background-color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+	z-index: 3;	
+}
+
+/* Link images */
+a.imgl:link{
+	text-decoration: none;
+	outline: none;
+	z-index: 1;
+}
+
+a.imgl:hover {	
+	text-decoration: none;
+	outline: none;
+	z-index: 1;
+}
+
+a.imgl:active{	
+	text-decoration: none;
+	outline: none;
+}
+
+a.imgl:visited{	
+	text-decoration: none;
+	outline: none;
+	z-index: 1;	
+}
+
+
+/* Body Link Styles */
+a.box:link{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:hover {
+	color: #FFFFFF;
+	background-color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:active{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:visited{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+/*list styles*/
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	float:left;
+}
+
+li.contact {
+	float:none;
+	/*
+	padding-right:1em;
+	*/
+}
+

@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'JosefinSlabRegular';
+    src: url('JosefinSlab-Regular-webfont.eot');
+    src: url('JosefinSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('JosefinSlab-Regular-webfont.woff') format('woff'),
+         url('JosefinSlab-Regular-webfont.ttf') format('truetype'),
+         url('JosefinSlab-Regular-webfont.svg#JosefinSlabRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('Lato-Light-webfont.eot');
+    src: url('Lato-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Lato-Light-webfont.woff') format('woff'),
+         url('Lato-Light-webfont.ttf') format('truetype'),
+         url('Lato-Light-webfont.svg#LatoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    padding: 0em;
+  }
+
+h1, h2, h3 {
+	font-size: 2em;
+	color: #AAAAAA;
+	font-family: 'JosefinSlabRegular', serif;
+	text-decoration: none;
+}
+
+img,
+embed,
+object,
+video {
+            max-width: 100%;
+          }
+	  
+img.figureq {
+    width: 100%;
+}
+
+body {
+	background-color: #000000;
+	background-image: url('skyg.jpg');
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;	
+	font-family: 'LatoLight', sans-serif;
+	font-size: 1.6em;
+	color: #AAAAAA;	
+
+	margin:0px;
+	padding:0px;	
+}
+
+#header {
+	float:left;
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: .7em;
+	line-height: .7em;	
+}
+
+#canvo {
+  float:left;
+  width: 52%;
+  min-width: 41em;
+  height: auto;
+}
+
+#canvs {
+  float:left;
+  min-width: 68em;
+  height: auto;
+}
+
+#canv {
+  float:left;
+  width: 33.333333%;
+  min-width: 29em;
+  height: auto;
+}
+
+#title {
+	float: left;	
+	width: 100%;	
+}
+
+#about {
+	float: left;
+	min-width: 4em;	
+	width: 47%;
+	height: 100%;
+	padding-right:2em;
+}
+
+#contact {
+	float: left;
+	min-width: 4em;
+	width: 47%;
+	height: 100%;	
+}
+
+/*
+#title {
+	float: left;
+	width: 31.333333%;
+	min-width: 12em;
+	height: 100%;
+	padding: 1%;
+}
+
+#about {
+	float: left;
+	width: 31.333333%;
+	min-width: 12em;
+	height: 100%;
+	padding: 1%;
+}
+
+#contact {
+	float: left;
+	width: 31.333333%;
+	min-width: 12em;	
+	height: 100%;
+	padding: 1%;
+}
+*/
+
+h2.head, h1.head {
+	padding: 0em;  
+}
+
+h1.head {
+    margin-bottom: 0em;
+    float: left;
+    line-height: 2em;
+}
+
+p.head {
+	padding: 0em;
+	line-height: 1.5em;
+	padding-right:1em;	
+}
+/*
+ul.head {
+	color: #000000;
+  	background-color: #FFFFFF;
+	line-height: 2em;
+	min-height: 8em;	
+	padding: .8em;
+	opacity:0.8;
+		
+}
+*/
+
+ul.head {
+	line-height: 1.5em;	
+	padding: 0em;
+	padding-right:1em;	
+}
+
+#wrapper {
+  /*
+	background-color: #ffffff;
+  */
+	width: 85%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#thumbs {
+	width: 100%;
+	min-width: 320px;	
+}
+
+#box {
+	float: left;
+	width: 100%;
+	min-width: 320px;	
+	font-size: .7em;
+	/*
+	line-height: .7em;
+	*/
+}
+
+#sham {
+  float:right;
+  width: 100%;
+  height: 1em;
+  /*
+  background-color: #ffffff;
+  */
+}
+
+
+/*
+#box {
+	width: 100%;
+	background-color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .5em;
+	padding: 1em;
+	line-height: 1.4em;
+	opacity:0.8;
+	filter:alpha(opacity=80);  For IE8 and earlier 
+}
+*/
+
+.figure {
+    min-width: 4em;
+    font-size: 65%;      
+    float: left;
+    width: 14.285714286%;      
+	    
+}
+
+.figuret {
+    min-width: 4em;
+    font-size: 65%;
+    float: left;
+    padding-top: 1em;
+    max-width: 14.285714286%; 
+}
+
+.figurei {
+    min-width: 4em;
+    font-size: 65%;        
+    float: left;
+    width: 33.333333%;
+}
+
+.figureq {
+    min-width: 3em;
+    line-height: 0em;
+    padding: 0em;
+    margin: 0em;
+    font-size: 65%;        
+    float: left;
+    width: 25%;
+}
+
+.figureqs {
+    min-width: 3em;
+    line-height: 0em;
+    padding: 0em;
+    margin: 0em;
+    font-size: 65%;        
+    float: left;
+    width: 25%;
+    max-width: 10em;
+}
+
+.figures {
+    min-width: 2em;
+    font-size: 55%;        
+    float: left;
+    width: 10%;  
+}
+
+.figureb {
+    min-width: 18em;
+   /*
+    font-size: 55%;
+   */
+    float: left;
+    width: 33.333333%;  
+    
+}
+
+.figurev {
+    min-width: 23em;
+   /*
+    font-size: 55%;
+   */
+    float: left;
+    width: 50%;  
+    
+}
+
+p.figcaption {
+  margin-top: -3em;
+  z-index: 3;
+}
+
+p.figcaptions {
+  margin-top: -4em;
+  z-index: 3;
+}
+
+a:link{
+	color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	color: #999999;	
+	text-decoration: none;
+	outline: none;
+}
+
+a:active{
+	color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+}
+
+/*img overlay Links */
+a.ilist:link{
+	color: #000000;
+	background-color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+}
+
+a.ilist:hover {
+	color: #333333;
+	background-color: #999999;	
+	text-decoration: none;
+	outline: none;
+}
+
+a.ilist:active{
+	color: #000000;
+	background-color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+}
+
+a.ilist:visited{
+	color: #000000;
+	background-color: #FFFFFF;	
+	text-decoration: none;
+	outline: none;
+}
+
+/* Link images */
+a.imgl:link{
+	text-decoration: none;
+	outline: none;
+}
+
+a.imgl:hover {	
+	text-decoration: none;
+	outline: none;
+}
+
+a.imgl:active{	
+	text-decoration: none;
+	outline: none;
+}
+
+a.imgl:visited{	
+	text-decoration: none;
+	outline: none;
+}
+
+
+/* Body Link Styles */
+a.box:link{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:hover {
+	color: #FFFFFF;
+	background-color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:active{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a.box:visited{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+#sheader {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: .2em;
+	font-size: 1.4em;
+}
+
+#swrapper {
+	width: 75%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#sbox {
+	width: 100%;
+	background-color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .5em;
+	padding: 1em;
+	line-height: 1.4em;
+	opacity:0.8;
+	filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	float:left;
+	padding-right:1em;	
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>Arrow Jump</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+
+        <!-- Processing 
+        <script type="text/javascript" src="processing-1.3.6.js"></script>
+	-->
+
+	<!-- Raphael 
+	<script src="raphael-min.js"></script>
+	-->
+
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+        var world = $("#world");
+        var floor = world.height();
+        var wall = world.width();
+        var gravity = 1;
+        
+        var x = 0;
+        var y = 0;
+        
+        var keys = {}; 
+        //arrow keys
+        var DOWN = 40;
+        var UP = 38;
+        var LEFT = 37;
+        var RIGHT = 39;
+        
+        
+        var character = {
+          x: 50,
+          y: 100,
+          vx: 0,
+          vy: 0,
+          init: function(){
+            this.div = $("<div>",{
+              id: "char",
+              css: {
+                left: this.x,
+                top: this.y
+              }
+            }).appendTo(world);
+            this.ground = floor - this.div.height();
+            this.bord = wall - this.div.width();
+          },
+          update: function(){
+            var c = this;
+            c.x += c.vx;
+            c.y += c.vy;
+            
+            c.isOnGround = false;
+            if (c.y > c.ground){
+              c.isOnGround = true;
+              c.y = c.ground;
+              c.vy = c.vy * -0.5;
+            }
+            if (c.y < 0){
+              c.y = 0;
+              c.vy = c.vy*-1;
+            }
+            if (c.x > c.bord){
+              c.x = c.bord;
+              c.vx = c.vx * -1;
+            }
+            if (c.x < 0){
+              c.x = 0;
+              c.vx = c.vx * -1;
+            }
+            c.vx*= 0.9;
+            c.vy += gravity;
+            c.div.css({
+              left: c.x,
+              top: c.y
+            });
+            c.updateKeys();
+          },
+          updateKeys: function(){
+            var c = this;
+            if (keys[LEFT]){
+              c.vx -= 2;
+            }
+            if (keys[RIGHT]){
+              c.vx += 2;
+            }
+            if (keys[UP] && c.isOnGround){
+                c.vy = -20;
+            }
+          }
+        };
+
+        $(document).keydown(function(e){
+          keys[e.which] = true;
+        }).keyup(function(e){
+          keys[e.which] = false;
+        });
+                            
+        character.init();
+        setInterval(function(){
+          character.update();
+        }, 30);
+
+			});	
+
+		</script>            
+
+        <script type="text/javascript">
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-21515187-4']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+	
+	<style>
+      #world{
+        background-color: #42526C;        
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+      }
+      #char{
+        position: relative;
+        width: 20px;
+        height: 40px;
+        background-color: black;
+      }	
+	
+	</style>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="header">
+        <div id="content">
+            <a href="index.html">
+                <!--
+                <div class="figuret">
+                    <img src="icos.gif">
+                </div>
+                -->
+                <h1 class="head">
+                James Makes
+                </h1>
+            </a>  
+        </div>                       
+
+    </div>
+
+    <div id="content">    
+    <div id="box">
+      <p class="head">
+	<a href="index.html"><- Go Back</a>
+      </p>      
+      <h1><a href="arrowjump.html">Arrow Jump</a></h1>
+      
+	<div id="world"></div>
+	<p class="head">
+	  Use the arrow keys to move and jump.
+	</p>
+
+      </div>
+
+  <div id="thumbs">
+	<div class="figureqs">
+          <p>
+            <a href="animations.html" class="imgl">
+              <img src="animations.jpg" alt=""/>
+            </a>
+            <a href="animations.html" class="ilist">
+              <p class="figcaptions">Animations</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="marimball.html" class="imgl">
+              <img src="marimball.jpg" alt=""/>
+            </a>
+            <a href="marimball.html" class="ilist">
+              <p class="figcaptions">Marimball</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="colorcode.html" class="imgl">
+              <img src="colorcode.jpg" alt=""/>
+            </a>
+            <a href="colorcode.html" class="ilist">
+              <p class="figcaptions">Color Code</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="paris.html" class="imgl">
+              <img src="paris.jpg" alt=""/>
+            </a>
+            <a href="paris.html" class="ilist">
+              <p class="figcaptions">Paris Audio</p>
+            </a>  
+          </p>
+        </div>	
+	<div class="figureqs">
+          <p>
+            <a href="vte.html" class="imgl">
+              <img src="vte.jpg" alt=""/>
+            </a>
+            <a href="vte.html" class="ilist">
+              <p class="figcaptions">VTE</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="directional.html" class="imgl">
+              <img src="organism.jpg" alt=""/>
+            </a>
+            <a href="directional.html" class="ilist">
+              <p class="figcaptions">Organism</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="keyboard.html" class="imgl">
+              <img src="keyboard.jpg" alt=""/>
+            </a>
+            <a href="keyboard.html" class="ilist">            
+              <p class="figcaptions">Keyboard</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="stars.html" class="imgl">
+              <img src="stars.jpg" alt=""/>
+            </a>
+            <a href="stars.html" class="ilist">            
+              <p class="figcaptions">Stars</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="saucer.html" class="imgl">
+              <img src="saucer.jpg" alt=""/>
+            </a>
+            <a href="saucer.html" class="ilist">            
+              <p class="figcaptions">Saucer</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="gears.html" class="imgl">
+              <img src="gears.jpg" alt=""/>
+            </a>
+            <a href="gears.html" class="ilist">            
+              <p class="figcaptions">Gears</p>
+            </a> 
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="dance.html"  class="imgl">
+              <img src="dances.jpg" alt=""/>
+            </a>
+            <a href="dance.html"  class="ilist">            
+              <p class="figcaptions">Dance in Translation</p>
+            </a>
+          </p>
+        </div>
+	<!--
+        <div class="figureqs">
+          <p>
+            <a href="screen.html" class="imgl">
+              <img src="smalls.jpg" alt=""/>
+            </a>
+            <a href="screen.html" class="ilist">            
+              <p class="figcaptions">Small-Scale Interactions</p>
+            </a>
+          </p>
+        </div>
+	-->
+        <div class="figureqs">
+          <p>
+            <a href="data.html" class="imgl">
+              <img src="datas.jpg" alt=""/>
+            </a>
+            <a href="data.html" class="ilist">            
+              <p class="figcaptions">Data in Translation</p>
+            </a>
+          </p>
+        </div>        	
+    </div>
+    <div id="sham">
+    </div>    
+
+    <div id="header">
+
+        <div id="about">
+            <h2 class="head">About</h2>
+            <p class="head">
+              This digital sketchbook collects browser-based and live interactive pieces by <a href="http://about.me/jamesproctor">James Proctor</a> and collaborators.           
+              My <a href="http://forgethowtotalk.tumblr.com">research blog</a> documents day-to-day thoughts and progress.
+            </p>  
+        </div>            
+        <div id="contact">
+            <h2 class="head">Contact</h2>
+	    <ul class="head">
+		<li><a href="http://forgethowtotalk.tumblr.com">Research Blog</a></li>                  
+              
+		<li><a href="mailto:jproctor@udel.edu">jproctor@udel.edu</a></li>
+	
+		<li><a href="#">443 718 0144</a></li>
+                                
+		<li><a href="http://www.twitter.com/dollaruw" target="_blank">@dollaruw</a></li>
+	    </ul>                        
+        </div>
+      </div>
+    
+    <!--
+    <div id="box">
+      <canvas data-processing-sources="sketch_jun11a.pde"></canvas>  
+      <p>
+        Click inside the black rectangle to give the canvas focus
+          <br>
+        Letter keys will produce sounds and colors
+          <br>
+        Other keys will clear the canvas
+      </p>
+    </div>
+    -->
+  </div>
+  
+</body>
+
+</html>

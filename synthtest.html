@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>Synth Test</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS 
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+        -->
+	
+	<style type="text/css">
+		#box {
+			background-color: #DDD;
+			width: 50%;
+			min-height: 320px;
+			margin: auto;
+		}
+		
+	</style>
+	
+        <!-- Processing 
+        <script type="text/javascript" src="processing-1.4.1.min.js"></script>
+        -->
+        <!-- Audiolet -->
+        <script type="text/javascript" src="Audiolet.min.js"></script>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+				var Synth = function(audiolet, frequency) {
+					AudioletGroup.apply(this, [audiolet,0,1]);
+					this.sine = new Sine(this.audiolet, frequency);
+					//this.modulator = new Saw(this.audiolet,2*frequency);
+					//this.modulatorMulAdd = new MulAdd(this.audiolet,frequency/2,frequency);
+					
+					this.gain = new Gain(this.audiolet);
+					this.envelope = new PercussiveEnvelope(this.audiolet,1,0.2,0.5,
+									       function() {
+										this.audiolet.scheduler.addRelative(0,
+											this.remove.bind(this));
+									       }.bind(this)
+					);
+					
+					//this.modulator.connect(this.modulatorMulAdd);
+					//this.modulatorMulAdd.connect(this.sine);
+					this.envelope.connect(this.gain,0,1);
+					this.sine.connect(this.gain);
+					this.gain.connect(this.outputs[0]);
+				};
+				extend(Synth, AudioletGroup);
+				
+				var AudioletApp = function(){
+					this.audiolet = new Audiolet();
+					
+					//var frequencyPattern = new PSequence([262,262,392,392],1);
+					
+					this.audiolet.scheduler.play([posX],1,
+						function(frequency) {
+							var synth = new Synth(this.audiolet,frequency);
+							synth.connect(this.audiolet.output);
+						}.bind(this)
+					);
+					
+					/*
+					this.audiolet.scheduler.addAbsolute(0,function(){
+						var synth = new Synth(this.audiolet,262);
+						synth.connect(this.audiolet.output);
+					}.bind(this));
+					*/
+					
+					//var synth = new Synth(this.audiolet, 440);
+					//synth.connect(this.audiolet.output);
+				};
+				
+				this.audioletApp = AudioletApp();
+				
+				$("#box").click(function() {
+					//playExample();
+					alert('clicked');
+				});
+			});
+		</script>            
+
+</head>
+
+<body>
+
+	<a href="#">
+		<div id='box'>
+			<p>
+				
+			</p>
+		</div>
+	</a>
+
+</body>
+
+</html>

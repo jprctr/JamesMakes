@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>Carbon</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+
+        <!-- Processing -->
+        <script type="text/javascript" src="processing-1.3.0.js"></script>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+			});	
+
+		</script>            
+        
+        <!-- Canvas Text - http://jim.studt.net/canvastext/ -->
+        <script type="text/javascript" src="canvastext.js"></script>
+        
+        <!-- Soundmanager2 -->
+        <script type="text/javascript" src="soundmanager2.js"></script>
+        
+        <!-- Soundmanager2 - flash if no HTML5 support -->
+        <script>
+        soundManager.url = '/swf/';
+        soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+        soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
+        // enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
+        soundManager.useHTML5Audio = false;
+        soundManager.debugMode = false;
+        soundManager.onready(function() {
+          // Ready to use; soundManager.createSound() etc. can now be called.
+        });
+        </script>
+        
+        <script type="text/javascript">
+        soundManager.onload = function() {
+        
+        //  var mySound
+        
+        soundManager.createSound({
+            id: 'e1',
+            url: '/data/e1.mp3',
+            stream: true,
+            autoPlay: true,
+            multiShot: false,
+           });        
+        
+        soundManager.createSound({
+            id: 'g1',
+            url: '/data/g1.mp3',
+            stream: true,
+            autoPlay: true,
+            multiShot: false,
+           });
+        
+        soundManager.createSound({
+            id: 'a1',
+            url: '/data/a1.mp3',
+            stream: true,
+            autoPlay: true,
+            multiShot: false,
+           });
+        
+        soundManager.createSound({
+            id: 'b1',
+            url: '/data/b1.mp3',
+            stream: true,
+            autoPlay: true,
+            multiShot: false,
+           });
+
+        soundManager.createSound({
+            id: 'e2',
+            url: '/data/e2.mp3',
+            stream: true,
+            autoPlay: true,
+            multiShot: false,
+           });
+
+          soundManager.stopAll();
+          }
+        
+        </script>
+	
+        <script type="text/javascript">
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-21515187-4']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="header">
+        <div id="content">
+            <a href="index.html">
+                <!--
+                <div class="figuret">
+                    <img src="icos.gif">
+                </div>
+                -->
+                <h1 class="head">
+                James Makes
+                </h1>
+            </a>  
+        </div>                       
+
+    </div>
+    
+    <div id="content">    
+    <div id="box">
+      <p class="head">
+	<a href="index.html"><- Go Back</a>
+      </p>      
+      <h1><a href="carbon.html">Carbon</a></h1>
+      <div id="canvo">
+      <canvas data-processing-sources="sketch_jan8.pde"></canvas>  
+      </div>
+      <div class="figureb">
+      <p class="head">
+        Mouse over carbon rods to change colors and sounds.
+      </p>
+      </div>
+      </div>
+
+  <div id="thumbs">
+	<div class="figureqs">
+          <p>
+            <a href="animations.html" class="imgl">
+              <img src="animations.jpg" alt=""/>
+            </a>
+            <a href="animations.html" class="ilist">
+              <p class="figcaptions">Animations</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="marimball.html" class="imgl">
+              <img src="marimball.jpg" alt=""/>
+            </a>
+            <a href="marimball.html" class="ilist">
+              <p class="figcaptions">Marimball</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="colorcode.html" class="imgl">
+              <img src="colorcode.jpg" alt=""/>
+            </a>
+            <a href="colorcode.html" class="ilist">
+              <p class="figcaptions">Color Code</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="paris.html" class="imgl">
+              <img src="paris.jpg" alt=""/>
+            </a>
+            <a href="paris.html" class="ilist">
+              <p class="figcaptions">Paris Audio</p>
+            </a>  
+          </p>
+        </div>	
+	<div class="figureqs">
+          <p>
+            <a href="vte.html" class="imgl">
+              <img src="vte.jpg" alt=""/>
+            </a>
+            <a href="vte.html" class="ilist">
+              <p class="figcaptions">VTE</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="directional.html" class="imgl">
+              <img src="organism.jpg" alt=""/>
+            </a>
+            <a href="directional.html" class="ilist">
+              <p class="figcaptions">Organism</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="keyboard.html" class="imgl">
+              <img src="keyboard.jpg" alt=""/>
+            </a>
+            <a href="keyboard.html" class="ilist">            
+              <p class="figcaptions">Keyboard</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="stars.html" class="imgl">
+              <img src="stars.jpg" alt=""/>
+            </a>
+            <a href="stars.html" class="ilist">            
+              <p class="figcaptions">Stars</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="saucer.html" class="imgl">
+              <img src="saucer.jpg" alt=""/>
+            </a>
+            <a href="saucer.html" class="ilist">            
+              <p class="figcaptions">Saucer</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="gears.html" class="imgl">
+              <img src="gears.jpg" alt=""/>
+            </a>
+            <a href="gears.html" class="ilist">            
+              <p class="figcaptions">Gears</p>
+            </a> 
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="dance.html"  class="imgl">
+              <img src="dances.jpg" alt=""/>
+            </a>
+            <a href="dance.html"  class="ilist">            
+              <p class="figcaptions">Dance in Translation</p>
+            </a>
+          </p>
+        </div>
+	<!--
+        <div class="figureqs">
+          <p>
+            <a href="screen.html" class="imgl">
+              <img src="smalls.jpg" alt=""/>
+            </a>
+            <a href="screen.html" class="ilist">            
+              <p class="figcaptions">Small-Scale Interactions</p>
+            </a>
+          </p>
+        </div>
+	-->
+        <div class="figureqs">
+          <p>
+            <a href="data.html" class="imgl">
+              <img src="datas.jpg" alt=""/>
+            </a>
+            <a href="data.html" class="ilist">            
+              <p class="figcaptions">Data in Translation</p>
+            </a>
+          </p>
+        </div>        	
+    </div>
+    <div id="sham">
+    </div>    
+
+    <div id="header">
+
+        <div id="about">
+            <h2 class="head">About</h2>
+            <p class="head">
+              This digital sketchbook collects browser-based and live interactive pieces by <a href="http://about.me/jamesproctor">James Proctor</a> and collaborators.           
+              My <a href="http://forgethowtotalk.tumblr.com">research blog</a> documents day-to-day thoughts and progress.
+            </p>  
+        </div>            
+        <div id="contact">
+            <h2 class="head">Contact</h2>
+	    <ul class="head">
+		<li><a href="http://forgethowtotalk.tumblr.com">Research Blog</a></li>                  
+              
+		<li><a href="mailto:jproctor@udel.edu">jproctor@udel.edu</a></li>
+	
+		<li><a href="#">443 718 0144</a></li>
+                                
+		<li><a href="http://www.twitter.com/dollaruw" target="_blank">@dollaruw</a></li>
+	    </ul>                        
+        </div>
+      </div>
+    
+    <!--
+    <div id="box">
+      <canvas data-processing-sources="sketch_jun11a.pde"></canvas>  
+      <p>
+        Click inside the black rectangle to give the canvas focus
+          <br>
+        Letter keys will produce sounds and colors
+          <br>
+        Other keys will clear the canvas
+      </p>
+    </div>
+    -->
+  </div>
+  
+</body>
+
+</html>

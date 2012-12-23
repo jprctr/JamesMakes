@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        
+        var win = $(window);
+        var doc = $(document);
+        var body = $("body");
+        var layer1 = $("#layer1");
+        var layer2 = $("#layer2");
+        var layer3 = $("#layer3");
+        var layer4 = $("#layer4");
+        var box = $(".box");
+        
+        var layerWidth = (body.width()/2);
+        
+        console.log(layerWidth);
+        
+        layer1.css({ width: layerWidth });
+        layer2.css({ width: layerWidth });
+        layer3.css({ width: layerWidth });
+        
+        var centering = (body.width()-layerWidth)/3;
+        
+        layer1.css({ left: centering });
+        layer2.css({ left: centering });
+        layer3.css({ left: centering });
+        
+        makeBoxes(7, 30, 0, layerWidth*1.4, layer1);
+        
+        makeBoxes(14, 60, 0, layerWidth*1.4, layer2);
+        
+        makeBoxes(21, 120, 0, layerWidth*1.4, layer3);
+        
+        
+        win.scroll(function(){
+          var scroll = doc.scrollTop();
+          layer2.css({
+            top : -scroll / 2
+          });
+          layer3.css({
+            top : -scroll * 2
+          });
+        });
+        
+        function makeBoxes(num, size, minY, maxY, parent){
+          for (var i = 0; i < num; i++){
+            $("<div>", {
+              "class" : "box",
+              css : {
+                width : 220,
+                //Math.random() * 30 + size, 
+                height : 220,
+                //Math.random() * 30 + size, 
+                top : minY + Math.random() * (maxY - minY),
+                left : Math.random() * layerWidth,
+              }
+            }).appendTo(parent); 
+          }
+        }
+        
+        
+        
+      });
+    </script>
+    <style>
+      #layer1, #layer2, #layer3 {
+        
+        position : absolute; 
+        top : 0;
+      }
+      .box{
+        position : absolute;
+        background-image: url("3lights_220x220_150B_4f_dark_clear_2.gif");
+      }
+      body {
+        background-color: #000;
+      }
+      .layers {
+        background-color: #000;
+        opacity: 0.99;
+      }
+      .box {
+        opacity: .12;
+      }
+
+    </style>
+  </head>
+  <body>
+  
+    <div id="layer1" class="layers"></div>
+    
+    <div id="layer2" class="layers"></div>
+    
+    <div id="layer3" class="layers"></div>
+    
+  </body>
+</html>

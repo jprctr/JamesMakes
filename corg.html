@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+        <!-- Soundmanager2 -->
+        <script type="text/javascript" src="soundmanager2.js"></script>
+
+        <!-- Soundmanager2 - flash if no HTML5 support -->
+          <script>
+            soundManager.url = '/swf/';
+            soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+            soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
+            // enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
+            soundManager.useHTML5Audio = false;
+            soundManager.debugMode = false;
+            soundManager.onready(function() {
+            // Ready to use; soundManager.createSound() etc. can now be called.
+            });
+          </script>    
+    
+    <script>
+      $(function(){
+        var world = $("#world");
+        var aS = $("#aS");
+        var bS = $("#bS");
+        var cS = $("#cS");
+        var dS = $("#dS");
+        var eS = $("#eS");
+        var fS = $("#fS");
+        var gS = $("#gS");
+        var hS = $("#hS");
+        var iS = $("#iS");        
+        var win = $(window);
+        var floor = world.height();
+        var wall = world.width();
+        
+        var x = 0;
+        var y = 0;
+        
+        var keys = {}; 
+        //arrow keys
+        var DOWN = 40;
+        var UP = 38;
+        var LEFT = 37;
+        var RIGHT = 39;
+
+        mouseX = 0;
+        mouseY = 0;
+        world.mousemove(function(e){
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+        });
+        
+        var character = {
+          x: (world.height()/2),
+          y: (world.width()/2),
+          vx: 0,
+          vy: 0,
+          init: function(){
+            this.div = $("<div>",{
+              id: "char",
+              css: {
+                left: this.x,
+                top: this.y
+              }
+            }).appendTo(world);
+            this.ground = floor - this.div.height();
+            this.bord = wall - this.div.width();
+          },
+          
+          update: function(){
+            var c = this;
+            c.x += c.vx;
+            c.y += c.vy;
+          
+          
+          if (mouseX > c.x){
+            c.vx += 0.05;
+          }
+          if (mouseX < c.x){
+              c.vx -= 0.05;
+          }
+          if (mouseY > c.y){
+            c.vy += 0.05;
+          }
+          if (mouseY < c.y){
+              c.vy -= 0.05;
+          }
+            
+            if (c.y > c.ground){
+              c.y = c.ground;
+              c.vy = c.vy * -0.5;
+            }
+            if (c.y < 0){
+              c.y = 0;
+              c.vy = c.vy * -0.5;
+            }
+            if (c.x > c.bord){
+              c.x = c.bord;
+              c.vx = c.vx * -0.5;
+            }
+            if (c.x < 0){
+              c.x = 0;
+              c.vx = c.vx * -0.5;
+            }
+            
+            c.div.css({
+              left: c.x,
+              top: c.y
+            });
+            
+            c.updateKeys();
+            c.updateSound();
+          },
+          updateKeys: function(){
+            var c = this;
+            if (keys[LEFT]){
+              c.vx -= 1;
+            }
+            if (keys[RIGHT]){
+              c.vx += 1;
+            }
+            if (keys[UP]){
+                c.vy -= 1;
+            }
+            if (keys[DOWN]){
+                c.vy += 1;
+            }
+            
+          },
+          updateSound: function(){
+              //audio + hittest
+            var char = $("#char");          
+            if (hitTest(aS, char)){
+              soundManager.play('aS');
+              aS.css("backgroundColor","#2d2d4f");
+            } else {
+              aS.css("backgroundColor","#222");
+            }
+            if (hitTest(bS, char)){           
+              soundManager.play('bS');
+              bS.css("backgroundColor","#2d2d4f");
+            } else {
+              bS.css("backgroundColor","#111");
+            }
+            if (hitTest(cS, char)){           
+              soundManager.play('cS');
+              cS.css("backgroundColor","#2d2d4f");
+            } else {
+              cS.css("backgroundColor","#222");
+            }
+            if (hitTest(dS, char)){           
+              soundManager.play('dS');
+              dS.css("backgroundColor","#2d2d4f");
+            } else {
+              dS.css("backgroundColor","#111");
+            }
+            if (hitTest(eS, char)){           
+              soundManager.play('eS');
+              eS.css("backgroundColor","#2d2d4f");
+            } else {
+              eS.css("backgroundColor","#222");
+            }
+            if (hitTest(fS, char)){           
+              soundManager.play('fS');
+              fS.css("backgroundColor","#2d2d4f");
+            } else {
+              fS.css("backgroundColor","#111");
+            }
+            if (hitTest(gS, char)){           
+              soundManager.play('gS');
+              gS.css("backgroundColor","#2d2d4f");
+            } else {
+              gS.css("backgroundColor","#222");
+            }
+            if (hitTest(hS, char)){           
+              soundManager.play('hS');
+              hS.css("backgroundColor","#2d2d4f");
+            } else {
+              hS.css("backgroundColor","#111");
+            }
+            if (hitTest(iS, char)){           
+              soundManager.play('iS');
+              iS.css("backgroundColor","#2d2d4f");
+            } else {
+              iS.css("backgroundColor","#222");
+            }
+          }
+        };
+        
+        $(document).keydown(function(e){
+          keys[e.which] = true;
+        }).keyup(function(e){
+          keys[e.which] = false;
+        });
+        
+        character.init();
+        setInterval(function(){
+          character.update();
+        }, 30);
+        
+        // hit test between two divs
+        // http://tekpool.wordpreSs.com/2006/10/11/rectangle-intersection-determine-if-two-given-rectangleS-intersect-each-other-or-not/
+        function hitTest(a, b){
+          var aPos = a.position();
+          var bPos = b.position();
+          
+          var aLeft = aPos.left;
+          var aRight = aPos.left + a.width();
+          var aTop = aPos.top;
+          var aBottom = aPos.top + a.height();
+          
+          var bLeft = bPos.left;
+          var bRight = bPos.left + b.width();
+          var bTop = bPos.top;
+          var bBottom = bPos.top + b.height();
+          
+          
+          return !( bLeft > aRight
+                    || bRight < aLeft
+                    || bTop > aBottom
+                    || bBottom < aTop
+                   );
+        }
+        
+        //Soundmanager
+            soundManager.onload = function() {
+            //  var mySound
+
+            soundManager.createSound({
+               id: 'aS',
+               url: '/data/gC.mp3',
+               stream: true,
+               autoPlay: true,
+               multiShot: false,
+              });
+
+            soundManager.createSound({
+                id: 'bS',
+                url: '/data/gD.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'cS',
+                url: '/data/gE.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'dS',
+                url: '/data/gF.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'eS',
+                url: '/data/gdrone.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'fS',
+                url: '/data/gG.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'gS',
+                url: '/data/gA.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'hS',
+                url: '/data/gB.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'iS',
+                url: '/data/gC.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'zs',
+                url: '/data/0.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'xs',
+                url: '/data/10.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.stopAll();
+            }        
+        
+      });
+    </script>
+    <style>
+      body{
+        background-color: #666666;
+      }
+      #world{
+        background-color: #000;        
+        position: relative;
+        width: 480px;
+        height: 480px;
+        border: 1px solid black;
+      }
+      #char{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        background-image: url('moth60.gif');
+      }
+      #aS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #222;
+      }
+      #bS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #333;
+      }      
+      #cS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #222;
+      }
+      #dS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #333;
+      }
+      #eS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #222;
+      }
+      #fS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #333;
+      }       
+      #gS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #222;
+      }
+      #hS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #333;
+      }
+      #iS{
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #222;
+      }       
+
+    </style>
+  </head>
+  <body>
+    <div id="world">
+      <div id="aS"></div>
+      <div id="bS"></div>
+      <div id="cS"></div>
+      <div id="dS"></div>
+      <div id="eS"></div>
+      <div id="fS"></div>
+      <div id="gS"></div>
+      <div id="hS"></div>
+      <div id="iS"></div>      
+    </div>
+  </body>
+</html>

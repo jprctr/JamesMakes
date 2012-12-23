@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+     $(function(){
+       $("#container0").hover(
+        function () {
+         $(".geara").css({
+           webkitAnimation : "notate 4s infinite ease-in-out"
+         });            
+         $(".gearb").css({
+           webkitAnimation : "rotate 4s infinite ease-in-out"                
+        });
+        },
+        function () {
+         $(".geara").css({
+           webkitAnimation : "rotate 4s infinite ease-in-out"
+         });            
+         $(".gearb").css({
+           webkitAnimation : "notate 4s infinite ease-in-out"
+         });                 
+        }        
+      );
+       $("#container1").hover(
+        function () {
+         $(".gearc").css({
+           webkitAnimation : "rotate 4s infinite ease-in-out"
+         });            
+         $(".geard").css({
+           webkitAnimation : "notate 4s infinite ease-in-out"                
+        });         
+        },
+        function () {        
+         $(".gearc").css({
+           webkitAnimation : "notate 4s infinite ease-in-out"
+         });            
+         $(".geard").css({
+           webkitAnimation : "rotate 4s infinite ease-in-out"                
+        });           
+        }        
+      );
+       
+     });     
+    </script>
+    <style>
+      
+      body {
+        background-color: #000;
+      }
+      
+      #background {
+        position: absolute;
+        width: 405px;
+        height: 720px;
+        top: 0px;
+        left: 90px;
+        background-image: url('grb-r.gif');
+      }
+    
+      .geara{
+        position : absolute;
+        left : 50px;
+        top : 0px;
+        width: auto;
+        height: auto;
+        opacity : 0.9;
+        -webkit-animation : rotate 3s infinite ease-in-out; 
+      }      
+      .gearb{
+        position : absolute;
+        left : 260px;
+        top : 120px;
+        width: auto;
+        height: auto;
+        opacity : 0.9;
+        -webkit-animation : notate 3s infinite ease-in-out; 
+      }      
+
+      .gearc{
+        position : absolute;
+        left : 0px;
+        top : 290px;
+        width: auto;
+        height: auto;
+        opacity : 0.9;
+        -webkit-animation : notate 3s infinite ease-in-out; 
+      }      
+      .geard{
+        position : absolute;
+        left : 210px;
+        top : 420px;
+        width: auto;
+        height: auto;
+        opacity : 0.9;
+        -webkit-animation : rotate 3s infinite ease-in-out; 
+      }      
+      
+      @-webkit-keyframes rotate{
+        0%{
+          -webkit-transform : rotateZ(0deg); 
+        } 
+      
+        50%{
+          -webkit-transform : rotateZ(180deg); 
+        } 
+      
+        100%{
+          -webkit-transform : rotateZ(360deg); 
+        }                    
+      }
+      
+      @-webkit-keyframes notate{
+        0%{
+          -webkit-transform : rotateZ(360deg); 
+        } 
+      
+        50%{
+          -webkit-transform : rotateZ(180deg); 
+        } 
+      
+        100%{
+          -webkit-transform : rotateZ(0deg); 
+        }                    
+      }      
+      
+    </style>
+  </head>
+  <body>
+    <div id="background">
+    </div>      
+      <div id="container0">
+        <div class="geara">
+         <img src="gb_0000.gif">
+        </div>
+        <div class="gearb">
+         <img src="gb_0000.gif">
+        </div>
+      </div>
+      <div id="container1">      
+        <div class="gearc">
+         <img src="gb_0000.gif">
+        </div>
+        <div class="geard">
+         <img src="gb_0000.gif">
+        </div>
+      </div>
+
+  </body>
+</html>

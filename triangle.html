@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>Triangle</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+
+        <!-- Processing 
+        <script type="text/javascript" src="processing-1.3.6.js"></script>
+	-->
+
+	<!-- Raphael -->
+	<script src="raphael-min.js"></script>
+
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+				var p = new Raphael("raph", "100%","100%");
+					var froArrow = p.path("").attr({fill:"gray", stroke:"none"});        
+					var thiArrow = p.path("").attr({fill:"black", stroke:"none"});
+					var thaArrow = p.path("").attr({fill:"white", stroke:"none"});       
+
+					var leftAx = "M 50 425 \
+						      L 100 425 \
+						      L 250 100 \
+						      L 325 325 \
+						      L 375 325 \
+						      L 275 50 \
+						      L 225 50";
+					
+					var leftAy = "M 225 50 \
+						      L 275 50 \
+						      L 375 325 \
+						      L 325 325 \
+						      L 250 100 \
+						      L 100 425 \
+						      L 50 425";
+					
+					var bottomAx = "M 250 100 \
+							L 100 425 \
+							L 400 425 \
+							L 450 375 \
+							L 175 375 \
+							L 267 150";
+				
+					var bottomAy = "M 267 150 \
+							L 175 375 \
+							L 450 375 \
+							L 400 425 \
+							L 100 425 \
+							L 250 100";        
+					
+					var rightAx = "M 275 50 \
+						       L 325 50 \
+						       L 450 375 \
+						       L 175 375 \
+						       L 195 325 \
+						       L 375 325";
+					
+					var rightAy = "M 375 325 \
+						       L 195 325 \
+						       L 195 325 \
+						       L 175 375 \
+						       L 450 375 \
+						       L 325 50 \
+						       L 275 50";        
+					
+					/*
+					toArrow.attr({path:triangle})
+					  .mouseover(function(){
+					    this.animate({path: diamond, fill:"blue"}, 1000, "ease-in-out"); 
+					  })
+					  .mouseout(function(){
+					    this.animate({path: triangle, fill:"gray"}, 2000, "ease-in-out");
+					  }).translate(50,50);                      
+					*/
+					
+					froArrow.attr({path:leftAx})
+					  .mouseover(function(){
+					    thaArrow.animate({path: bottomAy, fill: "gray"}, 1000, "ease-in-out");
+					    froArrow.animate({path: rightAy, fill: "black"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: leftAy, fill: "white"}, 1000, "ease-in-out");
+					  })
+					  .mouseout(function(){
+					    //this.animate({path: leftAx, fill:"gray"}, 1000, "ease-in-out");
+					    thaArrow.animate({path: rightAx, fill: "black"}, 1000, "ease-in-out");
+					    froArrow.animate({path: leftAx, fill: "gray"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: bottomAx, fill: "white"}, 1000, "ease-in-out");            
+					  });
+				
+					thiArrow.attr({path:bottomAx})
+					  .mouseover(function(){
+					    thaArrow.animate({path: bottomAy, fill: "gray"}, 1000, "ease-in-out");
+					    froArrow.animate({path: rightAy, fill: "black"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: leftAy, fill: "white"}, 1000, "ease-in-out");
+					  })
+					  .mouseout(function(){
+					    //this.animate({path: bottomAx, fill:"black"}, 1000, "ease-in-out");
+					    thaArrow.animate({path: rightAx, fill: "black"}, 1000, "ease-in-out");
+					    froArrow.animate({path: leftAx, fill: "gray"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: bottomAx, fill: "white"}, 1000, "ease-in-out");            
+					  });
+				
+					thaArrow.attr({path:rightAx})
+					  .mouseover(function(){
+					    //this.animate({path: rightAy, fill: "gray"}, 1000, "ease-in-out");
+					    thaArrow.animate({path: bottomAy, fill: "gray"}, 1000, "ease-in-out");
+					    froArrow.animate({path: rightAy, fill: "black"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: leftAy, fill: "white"}, 1000, "ease-in-out");
+					  })
+					  .mouseout(function(){
+					    //this.animate({path: rightAx, fill:"white"}, 1000, "ease-in-out");
+					    thaArrow.animate({path: rightAx, fill: "white"}, 1000, "ease-in-out");
+					    froArrow.animate({path: leftAx, fill: "gray"}, 1000, "ease-in-out");
+					    thiArrow.animate({path: bottomAx, fill: "black"}, 1000, "ease-in-out");            
+					  });
+				
+			});	
+
+		</script>            
+
+        <script type="text/javascript">
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-21515187-4']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+	
+	<style>
+	#raph {
+	  float:left;
+	  width: 500px;
+	  height: 500px;
+	  background-color: #42526C;
+	}
+	</style>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="header">
+        <div id="content">
+            <a href="index.html">
+                <!--
+                <div class="figuret">
+                    <img src="icos.gif">
+                </div>              
+                -->
+                <h1 class="head">
+                James Makes
+                </h1>
+            </a>  
+        </div>                       
+
+    </div>
+
+    <div id="content">    
+    <div id="box">
+      <p class="head">
+	<a href="index.html"><- Go Back</a>
+      </p>      
+      <h1><a href="triangle.html">Triangle</a></h1>
+      <div id="raph">
+
+      </div>
+      <div class="figureb">
+      <p class="head">
+        
+      </p>
+      </div>
+      </div>
+
+  <div id="thumbs">
+	<div class="figureqs">
+          <p>
+            <a href="animations.html" class="imgl">
+              <img src="animations.jpg" alt=""/>
+            </a>
+            <a href="animations.html" class="ilist">
+              <p class="figcaptions">Animations</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="marimball.html" class="imgl">
+              <img src="marimball.jpg" alt=""/>
+            </a>
+            <a href="marimball.html" class="ilist">
+              <p class="figcaptions">Marimball</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="colorcode.html" class="imgl">
+              <img src="colorcode.jpg" alt=""/>
+            </a>
+            <a href="colorcode.html" class="ilist">
+              <p class="figcaptions">Color Code</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="paris.html" class="imgl">
+              <img src="paris.jpg" alt=""/>
+            </a>
+            <a href="paris.html" class="ilist">
+              <p class="figcaptions">Paris Audio</p>
+            </a>  
+          </p>
+        </div>	
+	<div class="figureqs">
+          <p>
+            <a href="vte.html" class="imgl">
+              <img src="vte.jpg" alt=""/>
+            </a>
+            <a href="vte.html" class="ilist">
+              <p class="figcaptions">VTE</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="directional.html" class="imgl">
+              <img src="organism.jpg" alt=""/>
+            </a>
+            <a href="directional.html" class="ilist">
+              <p class="figcaptions">Organism</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="keyboard.html" class="imgl">
+              <img src="keyboard.jpg" alt=""/>
+            </a>
+            <a href="keyboard.html" class="ilist">            
+              <p class="figcaptions">Keyboard</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="stars.html" class="imgl">
+              <img src="stars.jpg" alt=""/>
+            </a>
+            <a href="stars.html" class="ilist">            
+              <p class="figcaptions">Stars</p>
+            </a>  
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="saucer.html" class="imgl">
+              <img src="saucer.jpg" alt=""/>
+            </a>
+            <a href="saucer.html" class="ilist">            
+              <p class="figcaptions">Saucer</p>
+            </a>  
+          </p>
+        </div>
+	<div class="figureqs">
+          <p>
+            <a href="gears.html" class="imgl">
+              <img src="gears.jpg" alt=""/>
+            </a>
+            <a href="gears.html" class="ilist">            
+              <p class="figcaptions">Gears</p>
+            </a> 
+          </p>
+        </div>
+        <div class="figureqs">
+          <p>
+            <a href="dance.html"  class="imgl">
+              <img src="dances.jpg" alt=""/>
+            </a>
+            <a href="dance.html"  class="ilist">            
+              <p class="figcaptions">Dance in Translation</p>
+            </a>
+          </p>
+        </div>
+	<!--
+        <div class="figureqs">
+          <p>
+            <a href="screen.html" class="imgl">
+              <img src="smalls.jpg" alt=""/>
+            </a>
+            <a href="screen.html" class="ilist">            
+              <p class="figcaptions">Small-Scale Interactions</p>
+            </a>
+          </p>
+        </div>
+	-->
+        <div class="figureqs">
+          <p>
+            <a href="data.html" class="imgl">
+              <img src="datas.jpg" alt=""/>
+            </a>
+            <a href="data.html" class="ilist">            
+              <p class="figcaptions">Data in Translation</p>
+            </a>
+          </p>
+        </div>        	
+    </div>
+    <div id="sham">
+    </div>    
+
+    <div id="header">
+
+        <div id="about">
+            <h2 class="head">About</h2>
+            <p class="head">
+              This digital sketchbook collects browser-based and live interactive pieces by <a href="http://about.me/jamesproctor">James Proctor</a> and collaborators.           
+              My <a href="http://forgethowtotalk.tumblr.com">research blog</a> documents day-to-day thoughts and progress.
+            </p>  
+        </div>            
+        <div id="contact">
+            <h2 class="head">Contact</h2>
+	    <ul class="head">
+		<li><a href="http://forgethowtotalk.tumblr.com">Research Blog</a></li>                  
+              
+		<li><a href="mailto:jproctor@udel.edu">jproctor@udel.edu</a></li>
+	
+		<li><a href="#">443 718 0144</a></li>
+                                
+		<li><a href="http://www.twitter.com/dollaruw" target="_blank">@dollaruw</a></li>
+	    </ul>                        
+        </div>
+      </div>
+    
+    <!--
+    <div id="box">
+      <canvas data-processing-sources="sketch_jun11a.pde"></canvas>  
+      <p>
+        Click inside the black rectangle to give the canvas focus
+          <br>
+        Letter keys will produce sounds and colors
+          <br>
+        Other keys will clear the canvas
+      </p>
+    </div>
+    -->
+  </div>
+  
+</body>
+
+</html>

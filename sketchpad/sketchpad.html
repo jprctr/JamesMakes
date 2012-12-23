@@ -1,0 +1,197 @@
+<!DOCTYPE html> 
+<html>
+  <head> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="icon.png"/> 
+    <link rel="apple-touch-startup-image" href="startup.jpg" /> 
+    
+    
+    <title>SketchPad</title> 
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <script>
+      $(function(){
+        
+        // Based on Richard Garside's Canvas and Multitouch tutorial
+        // http://www.nogginbox.co.uk/blog/canvas-and-multi-touch
+        
+        var c_canvas = null;
+        var c_ctx = null;
+        var c_lastPoints = null;
+        var c_easing = 0.4;
+        
+        // Setup event handlers
+        window.onload = init;
+        function init(e) {                        
+          
+          c_canvas = document.getElementById("canvas");
+          
+          c_lastPoints = Array();
+          
+          localStorageImage = new Image();
+          localStorageImage.addEventListener("load", function (event) {
+            c_ctx.drawImage(localStorageImage, 0, 0);
+          }, false);
+          
+          localStorageImage.src = localStorage.getItem('c_canvas');            
+          
+          $("#save").click(function() {
+            localStorage.setItem('c_canvas', c_canvas.toDataURL('image/png'))
+              });
+          
+          $("#clear").click(function() {
+            c_ctx.closePath();
+            c_ctx.fillStyle = "white";
+            c_ctx.fillRect(0, 0, c_canvas.width, c_canvas.height);
+            localStorage.clear();
+            c_ctx.beginPath();            
+          });                         
+          
+          if (c_canvas.getContext) {
+            c_ctx = c_canvas.getContext('2d');
+            c_ctx.lineWidth = 2;
+            c_ctx.strokeStyle = "rgb(0, 0, 0)";
+            c_ctx.fillStyle = "white";
+            c_ctx.fillRect(0,0,c_canvas.width, c_canvas.height);
+            c_ctx.beginPath();
+            
+            c_canvas.onmousedown = startDraw;
+            c_canvas.onmouseup = stopDraw;
+            c_canvas.ontouchstart = startDraw;
+            c_canvas.ontouchstop = stopDraw;
+            c_canvas.ontouchmove = drawMouse;                   
+            
+          }
+          
+          
+          
+          $(window).bind("orientationchange", function(){
+            
+            setTimeout(function(){
+              window.scrollTo(0, 1);
+            }, 100);
+          }).trigger("orientationchange");        
+          
+        }
+        
+        
+        function startDraw(e) {
+          if (e.touches) {
+            // Touch event
+            for (var i = 1; i <= e.touches.length; i++) {
+              c_lastPoints[i] = getCoords(e.touches[i - 1]); // Get info for finger #1
+            }
+          }
+          else {
+            // Mouse event
+            c_lastPoints[0] = getCoords(e);
+            c_canvas.onmousemove = drawMouse;
+          }
+          
+          return false;
+        }
+        
+        // Called whenever cursor position changes after drawing has started
+        function stopDraw(e) {
+          e.preventDefault();
+          c_canvas.onmousemove = null;
+        }
+        
+        function drawMouse(e) {
+          if (e.touches) {
+            // Touch Enabled
+            for (var i = 1; i <= e.touches.length; i++) {
+              var p = getCoords(e.touches[i - 1]); // Get info for finger i
+              c_lastPoints[i] = drawLine(c_lastPoints[i].x, c_lastPoints[i].y, p.x, p.y);
+            }
+          }
+          else {
+            // Not touch enabled
+            var p = getCoords(e);
+            c_lastPoints[0] = drawLine(c_lastPoints[0].x, c_lastPoints[0].y, p.x, p.y);
+          }
+          c_ctx.stroke();
+          c_ctx.closePath();
+          c_ctx.beginPath();
+          
+          return false;
+        }
+        
+        // Draw a line on the canvas from (s)tart to (e)nd
+        function drawLine(sX, sY, eX, eY) {
+          c_ctx.moveTo(sX, sY);
+          c_ctx.lineTo(eX, eY);
+          return { x: eX, y: eY };
+        }
+        
+        // Get the coordinates for a mouse or touch event
+        function getCoords(e) {
+          if (e.offsetX) {
+            return { x: e.offsetX, y: e.offsetY };
+          }
+          else if (e.layerX) {
+            return { x: e.layerX, y: e.layerY };
+          }
+          else {
+            return { x: e.pageX - c_canvas.offsetLeft, y: e.pageY - c_canvas.offsetTop };
+          }
+        }
+        
+        
+        
+      });
+    </script>
+    <style>
+      body,html{
+        width: 100%;
+        max-width: 480px;
+        margin : 0;
+        padding : 0;
+        background-color : #ddd;
+        font-family: helvetica;
+      }
+      #menu{
+        width: 100%;
+        max-width: 480px;
+        height: 40px;
+        background: #ddd;
+        text-align: center;
+      }
+      #save {
+        float: left;
+        width: 50%;
+        max-width: 240px;
+        height: 20px;
+        background: #ddd;
+        text-align: center;
+      }
+      #clear {
+        float: left;
+        width: 50%;
+        max-width: 240px;
+        height: 20px;
+        background: #ddd;
+        text-align: center;
+      }          
+      a {
+        text-decoration:none;
+        color: #000;
+      }
+    </style>
+  </head> 
+  
+  <body>
+    <div id="menu">
+      <br>
+      <div id="save">      
+        <a href="#">Save</a>
+      </div>
+      <div id="clear">          
+        <a href="#">Clear</a>
+      </div>
+    </div>
+    <canvas id="canvas" width="480" height="480"></canvas>
+  </body> 
+</html> 

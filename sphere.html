@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>o/r/g/a/n/i/s/m</title>
+
+<style type="text/css">
+A:link {text-decoration: none}
+A:link {color: #EEEEEE}
+
+body
+{
+background-color: #333333;
+font-family: century gothic;
+color: #ffffff;
+size: 14px;
+}
+
+div#wrapper
+{
+width:720px;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+}
+</style>
+
+<!-- Processing -->
+<script type="text/javascript" src="processing-1.2.3.js"></script>
+
+<!-- Soundmanager2 -->
+<script type="text/javascript" src="soundmanager2.js"></script>
+
+<!-- Soundmanager2 - flash if no HTML5 support -->
+<script>
+soundManager.url = '/swf/';
+soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
+// enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
+soundManager.useHTML5Audio = false;
+soundManager.debugMode = false;
+soundManager.onready(function() {
+  // Ready to use; soundManager.createSound() etc. can now be called.
+});
+</script>
+
+<script type="text/javascript">
+soundManager.onload = function() {
+
+//  var mySound
+
+soundManager.createSound({
+    id: 'as',
+    url: '/data/1.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'bs',
+    url: '/data/2.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'cs',
+    url: '/data/3.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'ds',
+    url: '/data/4.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'es',
+    url: '/data/5.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'fs',
+    url: '/data/6.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'gs',
+    url: '/data/7.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'hs',
+    url: '/data/8.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'is',
+    url: '/data/9.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'zs',
+    url: '/data/0.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+soundManager.createSound({
+    id: 'xs',
+    url: '/data/10.mp3',
+    stream: true,
+    autoPlay: true,
+    multiShot: false,
+   });
+
+//  mySound.play();
+  }
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21515187-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+<canvas data-processing-sources="sketch_june12.pde"></canvas>    
+</div>
+
+</body>
+
+</html>

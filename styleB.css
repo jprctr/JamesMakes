@@ -1,0 +1,355 @@
+body {
+  font-family: Helvetica;
+  color: #777777;
+  font-size: 1em;
+  /*
+  background-image: url('http://farm7.static.flickr.com/6213/6235654727_436b2b40ac_m.jpg');
+  */
+  background-attachment: fixed;
+}
+
+/* Links */
+a:link { 
+	color: #666666;
+	text-decoration: none;
+	outline: none;
+	}
+a:visited { 
+	color: #777777;
+	text-decoration: none;
+	}
+a:hover { 
+	color: #666666;
+	text-decoration: none;
+	}
+a:active { 
+	color: #666666;
+	text-decoration: none;
+	}
+	
+	
+	/* Top Nav Links */
+	
+	/*Info Links */
+	
+	a.info:link { 
+	color: #666666;
+	padding-right: 1em;
+	text-decoration: none;
+	outline: none;
+	}
+	a.info:visited { 
+	color: #666666;
+	padding-right: 1em;
+	text-decoration: none;
+	}
+	a.info:hover { 
+	color: #777777;
+	padding-right: 1em;	
+	text-decoration: none;
+	}
+	a.info:active { 
+	color: #666666;
+	padding-right: 1em;
+	text-decoration: none;
+	}
+	
+	/*nav Links */
+	
+	a.nav:link {
+	color: #666666;
+	background: #FFFACD;
+	padding: .4em;
+	text-decoration: none;
+	outline: none;
+	}
+	a.nav:visited { 
+	color: #666666;
+	background: #FFFACD;
+	padding: .4em;
+	text-decoration: none;
+	}
+	a.nav:hover { 
+	color: #777777;
+	padding: .4em;
+	text-decoration: none;
+	}
+	a.nav:active { 
+	color: #666666;
+	background: #FFFACD;
+	padding: .4em;
+	text-decoration: none;
+	}	
+	
+	
+
+/* General */
+* {
+  margin 0;
+  padding: 0;
+  }
+
+img,
+embed,
+object,
+video {
+            max-width: 100%;
+	    height: auto;
+          }
+
+a:img {border:0;}
+
+ul {
+	list-style-type: none;
+}
+
+.sub li {
+	margin: .3%;
+	list-style-type: none;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2{
+  margin-top: 3%;
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: .9em;
+}
+
+h4.back {
+  float: right;
+}
+
+@media screen and (min-width: 1024px) {
+	h4.back {
+		display: none;
+	}
+}
+
+#wrapper{
+	width: 90%;
+	min-width: 768px;
+	margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+	#wrapper {
+		width: 94%;
+		margin: 2%;
+		min-width: 480px;
+	}
+}
+
+/* left bar */
+
+#left{
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    #left{
+    /*
+      background: #BBBBBB;
+      max-width: 18em;
+      width: 31.333333%;
+    */
+      font-size: 1.2em;
+      display: block;
+      max-height: 100%;
+      position: fixed;
+      float: left;
+      width: 20em;
+      overflow: visible;
+      z-index: 3;
+    }
+}
+
+	li.top {
+	  float: left;
+	  margin: .3%;
+	}
+	
+	ul.info {
+	  
+	}
+	
+	ul.nav {
+	  margin: 0;
+	  padding: 0;
+	  line-height: 2em;
+	  display: inline-block;
+	  width: 100%;
+	  min-width: 480px;
+	}
+
+@media screen and (min-width: 1024px) {
+  #top {
+    display: none;
+  }
+}
+
+#name{
+  font-size: 1em;
+  line-height: 1.2em;    
+}
+
+#menu{
+  font-size: 1em;
+  line-height: 1.2em;  
+}
+
+#about{
+  /*
+  font-size: .61803398874989em;
+  */
+  font-size: 1em;
+  line-height: 1.2em;  
+}
+
+#subnav{
+  font-size: .8em;
+  /*
+  font-size: .61803398874989em;
+  */
+}
+
+/* Center Column */
+#main{
+  /*
+  margin-top: 1.2em;
+  */
+  float: left;
+  text-align: left;
+  font-size: 1em;
+  /*
+  width: 61.80339887%;
+  */
+  min-width: 9em;
+  /*
+   background: #DDDDDD;
+  */
+  height: 100%:
+  overflow-y: auto;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  #main {
+    margin-left: 22em;
+    min-width: 18em;
+  }
+}
+
+#landing {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  #landing {
+    display: block;
+  }
+}
+
+.sub{
+  float: left;
+  width: 100%;
+  /*
+  text-align: center;
+  */
+  font-size: 1em;
+  padding-bottom: 1%;
+}
+
+#title{
+  float: left;
+  width: 100%;
+}
+
+#sectitle{
+  float: left;
+  width: 100%;
+  color: #666666;
+  margin-top: 1.2em;
+  margin-bottom: .6em;
+}
+
+#small{
+  float: left;
+  font-size: 1em;
+
+}
+
+#big{
+  float: left;
+  font-size: 1em;
+}
+
+#info{
+  float: left;
+  text-align: left;
+  font-size: 1em;
+}
+
+#solo{
+  font-size: 1em;
+}
+#biography{
+  float: left;
+  width: 100%;
+  font-size: 1em;
+}
+
+#links{
+  font-size: 1em;
+  
+}
+
+@media screen and (min-width: 1024px) {
+	.footer {
+		display: none;
+	}
+}
+
+#thumb{
+  /*
+  max-width: 150px;
+  */
+  width: 32.7%;
+  float: left;
+  font-size: 1em;
+  margin: .3%;
+	}
+	
+	
+#hidden{
+	display: none;	 
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 60%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-container {
+    display: none;
+  }
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

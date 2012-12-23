@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>James Proctor - Sketches</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+
+        <!-- Processing -->
+        <script type="text/javascript" src="processing-1.3.0.js"></script>
+
+        <script type="text/javascript">
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-21515187-4']);
+         _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+        
+	<!-- JQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+			});	
+
+		</script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    
+    <div id="header" class="index">
+
+        <div id="about">
+            <h2 class="head">
+		<a href="index.html">
+                James Makes
+		</a>
+            </h2>
+                <!--
+            <h2 class="head">About</h2>
+                -->
+            <p class="head">
+              This digital sketchbook collects browser-based and live interactive pieces by <a href="http://about.me/jamesproctor">James Proctor</a> and collaborators.           
+              My <a href="http://forgethowtotalk.tumblr.com">research blog</a> documents day-to-day thoughts and progress.
+            </p>  
+        </div>
+        
+        <div id="contact">
+            <h2 class="head">Contact</h2>
+	    <ul class="head">
+                <li><a href="http://forgethowtotalk.tumblr.com">Research Blog</a></li>
+              
+		<li><a href="mailto:jproctor@udel.edu">jproctor@udel.edu</a></li>
+	
+		<li><a href="#">443 718 0144</a></li>
+                                
+		<li><a href="http://www.twitter.com/dollaruw" target="_blank">@dollaruw</a></li>
+	    </ul>                        
+        </div>    
+    </div>
+<!--
+    <div class="subhead">
+      <h2 class="news">
+        Featured
+      </h2>
+    </div>
+  -->
+
+            <!--
+
+        <div id="news">
+            <ul class="head">
+	      
+	      <li><a href="pyramid.html">3d Pyramid</a></li>
+	      <li><a href="perspective.html">Perspective Test</a></li>
+	      
+	      <li><a href="bezier.html">Bezier Curves in Processing.js</a></li>
+              <li><a href="horpart.html">Horizontal Particle System</a></li>
+              
+            -->
+	      <!-- old
+	      
+	      <li><a href="arrowjump.html">Arrow Key Movement</a></li>
+              <li><a href="collision.html">Simple DIV Collision Game</a></li>	
+
+
+
+              Arrow Spiral*****************************************************************
+
+
+              http://jamesmakes.com/construct.html
+        <div class="figureq">
+          <p>
+            <a href="construct.html" class="imgl">
+              <img src="construct.jpg" alt=""/>
+            </a>
+            <a href="construct.html" class="ilist">
+              <p class="figcaption">Construct</p>
+            </a>  
+          </p>
+        </div>
+
+              http://internetbeautificationproject.org/carbon.html
+        <div class="figureq">
+          <p>
+            <a href="carbon.html" class="imgl">
+              <img src="carbon.jpg" alt=""/>
+            </a>
+            <a href="carbon.html" class="ilist">
+              <p class="figcaption">Carbon</p>
+            </a>  
+          </p>
+        </div>
+
+              <li><a href="boxmodel.html">3d Boxes</a></li>
+        <div class="figureq">
+          <p>
+            <a href="boxmodel.html" class="imgl">
+              <img src="3dboxes.jpg" alt=""/>
+            </a>
+            <a href="boxmodel.html" class="ilist">
+              <p class="figcaption">3D Boxes</p>
+            </a>  
+          </p>
+        </div>
+
+              <li><a href="land.html">Multiple Perspectives on a Land Camera</a></li>
+        <div class="figureq">
+          <p>
+            <a href="land.html" class="imgl">
+              <img src="land.jpg" alt=""/>
+            </a>
+            <a href="land.html" class="ilist">
+              <p class="figcaption">Land Camera</p>
+            </a>  
+          </p>
+        </div>
+
+              <li><a href="svg.html">SVG Experiements with Rafael.js</a></li>
+http://internetbeautificationproject.org/diamonds.html
+        <div class="figureq">
+          <p>
+            <a href="svg.html" class="imgl">
+              <img src="svg.jpg" alt=""/>
+            </a>
+            <a href="svg.html" class="ilist">
+              <p class="figcaption">SVG</p>
+            </a>  
+          </p>
+        </div>
+
+              <li><a href="sketchpad/sketchpad.html">Sketchpad with LocalStorage</a></li>
+        <div class="figureq">
+          <p>
+            <a href="sketchpad/sketchpad.html" class="imgl">
+              <img src="sketchpad.jpg" alt=""/>
+            </a>
+            <a href="sketchpad/sketchpad.html" class="ilist">
+              <p class="figcaption">Sketchpad</p>
+            </a>  
+          </p>
+        </div>
+
+              <li><a href="spores.html">Spores Particle System</a></li>
+        <div class="figureq">
+          <p>
+            <a href="spores.html" class="imgl">
+              <img src="spores.jpg" alt=""/>
+            </a>
+            <a href="spores.html" class="ilist">
+              <p class="figcaption">Spore Particles</p>
+            </a>  
+          </p>
+        </div>
+
+              ///Fridge Magnets
+        <div class="figureq">
+          <p>
+            <a href="fridge.html" class="imgl">
+              <img src="fridge.jpg" alt=""/>
+            </a>
+            <a href="fridge.html" class="ilist">
+              <p class="figcaption">Fridge Magnets</p>
+            </a>  
+          </p>
+        </div>
+
+	      
+              </ul>
+            </p>
+  
+        </div>
+        -->
+
+    <div id="content">
+     
+        <div class="figureq">
+          <p>
+            <a href="animations.html" class="imgl">
+              <img src="animationsC.jpg" alt=""/>
+            </a>
+            <a href="animations.html" class="ilist">
+              <p class="figcaption">Animations</p>
+            </a>  
+          </p>
+        </div>
+                
+        <div class="figureq">
+          <p>
+            <a href="osaka.html" class="imgl">
+              <img src="osaka500.jpg" alt=""/>
+            </a>
+            <a href="osaka.html" class="ilist">
+              <p class="figcaption">Osaka Audio</p>
+            </a>  
+          </p>
+        </div>
+        	
+        <div class="figureq">
+          <p>
+            <a href="vte.html" class="imgl">
+              <img src="vte.jpg" alt=""/>
+            </a>
+            <a href="vte.html" class="ilist">
+              <p class="figcaption">VTE</p>
+            </a>  
+          </p>
+        </div>
+        
+        <div class="figureq">
+          <p>
+            <a href="colorcode.html" class="imgl">
+              <img src="colorcode.jpg" alt=""/>
+            </a>
+            <a href="colorcode.html" class="ilist">
+              <p class="figcaption">Color Code</p>
+            </a>  
+          </p>
+        </div>
+        
+        <div class="figureq">
+          <p>
+            <a href="directional.html" class="imgl">
+              <img src="organism.jpg" alt=""/>
+            </a>
+            <a href="directional.html" class="ilist">
+              <p class="figcaption">Organism</p>
+            </a>  
+          </p>
+        </div>
+        
+        <div class="figureq">
+          <p>
+            <a href="paris.html" class="imgl">
+              <img src="paris.jpg" alt=""/>
+            </a>
+            <a href="paris.html" class="ilist">
+              <p class="figcaption">Paris Audio</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="dance.html"  class="imgl">
+              <img src="dances.jpg" alt=""/>
+            </a>
+            <a href="dance.html"  class="ilist">            
+              <p class="figcaption">Dance in Translation</p>
+            </a>
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="data.html" class="imgl">
+              <img src="datas.jpg" alt=""/>
+            </a>
+            <a href="data.html" class="ilist">            
+              <p class="figcaption">Data in Translation</p>
+            </a>
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="arrow.html" class="imgl">
+              <img src="arrow.jpg" alt=""/>
+            </a>
+            <a href="arrow.html" class="ilist">
+              <p class="figcaption">Arrow Spiral</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="marimball.html" class="imgl">
+              <img src="marimball.jpg" alt=""/>
+            </a>
+            <a href="marimball.html" class="ilist">
+              <p class="figcaption">Marimball</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="construct.html" class="imgl">
+              <img src="construct.jpg" alt=""/>
+            </a>
+            <a href="construct.html" class="ilist">
+              <p class="figcaption">Construct</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="carbon.html" class="imgl">
+              <img src="carbon.jpg" alt=""/>
+            </a>
+            <a href="carbon.html" class="ilist">
+              <p class="figcaption">Carbon</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="boxmodel.html" class="imgl">
+              <img src="3dboxes.jpg" alt=""/>
+            </a>
+            <a href="boxmodel.html" class="ilist">
+              <p class="figcaption">3D Boxes</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="land.html" class="imgl">
+              <img src="land.jpg" alt=""/>
+            </a>
+            <a href="land.html" class="ilist">
+              <p class="figcaption">Land Camera</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="svg.html" class="imgl">
+              <img src="svg.jpg" alt=""/>
+            </a>
+            <a href="svg.html" class="ilist">
+              <p class="figcaption">SVG</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="sketchpad/sketchpad.html" class="imgl">
+              <img src="sketchpad.jpg" alt=""/>
+            </a>
+            <a href="sketchpad/sketchpad.html" class="ilist">
+              <p class="figcaption">Sketchpad</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="spores.html" class="imgl">
+              <img src="spores.jpg" alt=""/>
+            </a>
+            <a href="spores.html" class="ilist">
+              <p class="figcaption">Spore Particles</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="fridge.html" class="imgl">
+              <img src="fridge2.jpg" alt=""/>
+            </a>
+            <a href="fridge.html" class="ilist">
+              <p class="figcaption">Fridge Magnets</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="horpart.html" class="imgl">
+              <img src="particle.jpg" alt=""/>
+            </a>   
+            <a href="horpart.html" class="ilist">
+              <p class="figcaption">Particles</p>
+            </a>           
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="saucer.html" class="imgl">
+              <img src="saucer.jpg" alt=""/>
+            </a>
+            <a href="saucer.html" class="ilist">            
+              <p class="figcaption">Saucer</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="stars.html" class="imgl">
+              <img src="stars.jpg" alt=""/>
+            </a>
+            <a href="stars.html" class="ilist">            
+              <p class="figcaption">Stars</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="keyboard.html" class="imgl">
+              <img src="keyboard.jpg" alt=""/>
+            </a>
+            <a href="keyboard.html" class="ilist">            
+              <p class="figcaption">Keyboard</p>
+            </a>  
+          </p>
+        </div>
+
+        <div class="figureq">
+          <p>
+            <a href="screen.html" class="imgl">
+              <img src="smalls.jpg" alt=""/>
+            </a>
+            <a href="screen.html" class="ilist">            
+              <p class="figcaption">Small-Scale Interactions</p>
+            </a>
+          </p>
+        </div>
+
+        <!-- GEARS AND STUFF -->
+        <div class="figureq">
+          <p>
+            <a href="gears2.html" class="imgl">
+              <img src="gears.jpg" alt=""/>
+            </a>
+            <a href="gears2.html" class="ilist">            
+              <p class="figcaption">Gears</p>
+            </a> 
+          </p>
+        </div>
+
+    </div>
+    
+  </div>
+
+</body>
+
+</html>

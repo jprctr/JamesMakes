@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url('http://themes.googleusercontent.com/static/fonts/lato/v1/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Josefin Slab'), local('JosefinSlab'), url('http://themes.googleusercontent.com/static/fonts/josefinslab/v1/46aYWdgz-1oFX11flmyEfaRDOzjiPcYnFooOUGCOsRk.woff') format('woff');
+}
+
+
+h1, h2, h3 {
+	color: #999999;
+	font-family: 'Josefin Slab', serif;	
+}
+
+body {
+	background-color: #000000;
+	background-image: url('skyg.jpg');
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: 'Lato-Light', sans-serif;
+	font-size: 1.5em;
+	color: #000000;
+}
+
+@-moz-document url-prefix() {
+
+	body {
+		font-family: 'Lato', sans-serif;
+	}
+
+}
+
+#header {
+	width: 728px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 4px;
+	font-size: 1.4em;
+}
+
+#nav {
+	width: 728px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 4px;
+	font-size: 1.4em;
+}
+
+#wrapper {
+	width: 728px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content {
+	width: 728px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.5em;
+}
+
+div.hbox {
+	width: 728px;
+	background-color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .5em;
+	padding: 1em;
+	line-height: 1.4em;
+	opacity:0.8;
+	filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+#box {
+	width: 728px;
+	background-color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .5em;
+	padding: 1em;
+	line-height: 1.4em;
+	opacity:0.8;
+	filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+a:link{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	color: #FFFFFF;
+	background-color: #000000;
+	text-decoration: none;
+	outline: none;
+}
+
+a:active{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited{
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+}

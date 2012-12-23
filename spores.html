@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        
+        var win = $(window);
+        var canvas = $("#paper")[0];
+        canvas.width = win.height()/10*8;
+        canvas.height = win.height()/10*8;
+        var c = canvas.getContext("2d");
+        c.fillStyle = "#96a144";
+        c.fillRect(0,0,canvas.width,canvas.height);
+        
+        var gravity = 0;
+        var particles = [];
+        var NUM = 10;
+        var colors = ["#d46fa8", "#6fa8d4", 
+                      "rgba(255,0,0,0.1)",
+                      "#fcb708","white"];
+        
+        var germ = new Image();
+        germ.src = "germ.png";
+        // c.drawImage(germ, p.posX, p.posY);
+        
+        for (var i = 0; i < NUM; i++){
+          particles[i] = new Particle(canvas.width/2,
+                                      canvas.height/2); 
+        }
+        
+        var mouseX = win.width/2;
+        var mouseY = win.height/2;
+        $("#paper").mousemove(function(e){
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+        });        
+        
+        setInterval(function(){
+          c.fillStyle = "rgba(33,41,54,.5)";
+          c.fillRect(0,0,canvas.width,canvas.height);
+          for (var i = 0; i < NUM; i++){
+            particles[i].run(); 
+          }
+        }, 30);
+        
+        
+        function Particle(x, y){
+          var p = this;
+          var col = colors[parseInt(Math.random()*colors.length)];
+          function start(){
+            p.posX = mouseX + (Math.random() * 200 - 100);
+            p.posY = mouseY + (Math.random() * 200 - 100);
+            p.velX = Math.random() * 2 - 1;
+            p.velY = Math.random() * 2 - 1;
+            p.radius = Math.random() * 25 + 2;
+            p.alpha = 1;
+          }
+          setTimeout(start, Math.random()*700000);
+          setInterval(start, Math.random()*3000);
+          p.run = function(){
+            p.posX += p.velX;
+            p.posY += p.velY;
+            p.velY += gravity;
+            p.radius -= 2;
+            if (p.radius <0) p.radius = 0;
+            if (p.posY > win.height() + 100){
+             start(); 
+            }
+            c.fillStyle = col;
+            c.drawImage(germ, p.posX, p.posY);
+            //circle(p.posX, p.posY, p.radius); 
+          };
+        }
+        
+        function circle(x, y, radius){
+          c.beginPath();
+          c.arc(x, y, radius, 0, Math.PI * 2, false);
+          c.fill();
+        }
+        
+        
+      });
+    </script>
+    <style>
+      body,html{
+        font-family: futura;
+        background-image: url('greysq.gif');
+        margin : 0px;
+        padding : 0px; 
+      }
+      #paper {
+        margin: 2%;
+        border-radius: 50%;
+        border: 3px solid #555;
+      }
+      #label {
+        margin: 2%;
+        padding: 1%;
+        width: 100px;
+        background: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="paper">
+      Go get Chrome
+    </canvas>
+    
+    <div id="label">
+    Spec: A0001
+    </div>
+    
+  </body>
+</html>

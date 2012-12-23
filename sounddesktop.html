@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<!-- info -->
+	<title>Organism</title>
+	<link rel="icon" href="icos.ico" type="image/x-icon" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="sketch.css" />
+
+        <!-- Processing -->
+        <script type="text/javascript" src="processing-1.3.0.js"></script>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-21515187-4']);
+         _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+        
+	<!-- JQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        	<script type="text/javascript"> 
+                        $(document).ready(function() {
+                            	$(function() {
+					$("a").hover(function () {
+										  
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+				});
+				
+			});	
+
+		</script>        
+
+        <!-- Soundmanager2 -->
+        <script type="text/javascript" src="soundmanager2.js"></script>
+
+        <!-- Soundmanager2 - flash if no HTML5 support -->
+          <script>
+            soundManager.url = '/swf/';
+            soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+            soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
+            // enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
+            soundManager.useHTML5Audio = false;
+            soundManager.debugMode = false;
+            soundManager.onready(function() {
+            // Ready to use; soundManager.createSound() etc. can now be called.
+            });
+          </script>
+
+          <script type="text/javascript">
+            soundManager.onload = function() {
+            //  var mySound
+
+            soundManager.createSound({
+               id: 'as',
+               url: '/data/1.mp3',
+               stream: true,
+               autoPlay: true,
+               multiShot: false,
+              });
+
+            soundManager.createSound({
+                id: 'bs',
+                url: '/data/2.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'cs',
+                url: '/data/3.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'ds',
+                url: '/data/4.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'es',
+                url: '/data/5.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'fs',
+                url: '/data/6.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'gs',
+                url: '/data/7.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'hs',
+                url: '/data/8.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'is',
+                url: '/data/9.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'zs',
+                url: '/data/0.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.createSound({
+                id: 'xs',
+                url: '/data/10.mp3',
+                stream: true,
+                autoPlay: true,
+                multiShot: false,
+               });
+            
+            soundManager.stopAll();
+            }
+          </script>
+
+</head>
+
+<body>
+
+      <canvas data-processing-sources="sketch_july16.pde"></canvas>
+
+</body>
+
+</html>

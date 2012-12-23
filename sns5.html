@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<!--
+    <meta name="viewport" content="user-scalable=no, width=460, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="iphon_tetris_icon.png"/>
+
+    <link rel="apple-touch-startup-image" href="startup.png" />
+    
+	<link rel="stylesheet" href="tetris.css" type="text/css" media="screen, mobile" title="main" charset="utf-8">
+-->
+
+<title>o/r/g/a/n/i/s/m</title>
+
+<style type="text/css">
+A:link {text-decoration: none}
+A:link {color: #EEEEEE}
+
+body
+{
+background-color: #333333;
+font-family: century gothic;
+color: #ffffff;
+size: 14px;
+}
+
+div#wrapper
+{
+width:460px;
+height:320px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+}
+</style>
+
+<!-- Processing -->
+<script type="text/javascript" src="processing-1.2.3.js"></script>
+
+<!-- Audiosprite -->
+<script type="text/javascript" src="audiosprite.js"></script>
+
+
+<!--
+<script type="text/javascript">
+	var channel_max = 1;										// number of channels
+	audiochannels = new Array();
+	for (a=0;a<channel_max;a++) {									// prepare the channels
+		audiochannels[a] = new Array();
+		audiochannels[a]['channel'] = new Audio();						// create a new audio object
+		audiochannels[a]['finished'] = -1;							// expected end time for this channel
+	}
+	function play_multi_sound(s) {
+		for (a=0;a<audiochannels.length;a++) {
+			thistime = new Date();
+			if (audiochannels[a]['finished'] < thistime.getTime()) {			// is this channel finished?
+				audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration*1000;
+				audiochannels[a]['channel'].src = document.getElementById(s).src;
+				audiochannels[a]['channel'].load();
+				audiochannels[a]['channel'].play();
+				break;
+			}
+		}
+	}
+</script>
+
+
+
+<script>
+var audio = document.getElementById('abc');
+var segmentEnd;
+
+audio.addEventListener('timeupdate', function (){
+    if (segmentEnd && audio.currentTime >= segmentEnd) {
+        audio.pause();
+    }   
+    console.log(audio.currentTime);
+}, false);
+
+function playSegment(startTime, endTime){
+    segmentEnd = endTime;
+    audio.currentTime = startTime;
+    audio.play();
+}
+</script>
+-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21515187-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<!--
+<audio id="a0" src="data/0.wav" preload="auto"></audio>
+<audio id="a1" src="data/1.wav" preload="auto"></audio>
+<audio id="a2" src="data/2.wav" preload="auto"></audio>
+<audio id="a3" src="data/3.wav" preload="auto"></audio>
+<audio id="a4" src="data/4.wav" preload="auto"></audio>
+<audio id="a5" src="data/5.wav" preload="auto"></audio>
+<audio id="a6" src="data/6.wav" preload="auto"></audio>
+<audio id="a7" src="data/7.wav" preload="auto"></audio>
+<audio id="a8" src="data/8.wav" preload="auto"></audio>
+<audio id="a9" src="data/9.wav" preload="auto"></audio>
+<audio id="a10" src="data/10.wav" preload="auto"></audio>
+
+<div id="wrapper">
+<a href="javascript:play_multi_sound('a1');"><img src="data/sqr.jpg" alt="Answer"></a>
+<a href="javascript:play_multi_sound('b1');"><img src="data/sqr.jpg" alt="Bullet"></a>
+<a href="javascript:play_multi_sound('c1');"><img src="data/sqr.jpg" alt="Circuit"></a>
+<a href="javascript:play_multi_sound('d1');"><img src="data/sqr.jpg" alt="Danger"></a>
+<a href="javascript:play_multi_sound('e1');"><img src="data/sqr.jpg" alt="Earth"></a><br />
+<a href="javascript:play_multi_sound('h1');"><img src="data/sqr.jpg" alt="Heaven"></a>
+<a href="javascript:play_multi_sound('m1');"><img src="data/sqr.jpg" alt="Machine"></a>
+<a href="javascript:play_multi_sound('r1');"><img src="data/sqr.jpg" alt="Rhythm"></a>
+<a href="javascript:play_multi_sound('t1');"><img src="data/sqr.jpg" alt="Terror"></a>
+<a href="javascript:play_multi_sound('z1');"><img src="data/sqr.jpg" alt="Zero"></a>
+</div>
+<div id="wrapper">
+</div>
+-->
+
+<audio id="abc" src="ABC.mp3" preload="auto"></audio>
+<canvas data-processing-sources="sketch_july3.pde"></canvas>    
+
+</body>
+
+</html>

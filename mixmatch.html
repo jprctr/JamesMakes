@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        // center it
+        var win = $(window);
+        var nav = $("#nav");
+        var gal = $("#gal");
+        var name = $("#name");
+        var content = $("#content");
+        var page = $("#page");
+        var pageContent = $("#pageContent");
+        
+        win.resize(function(){
+
+          gal.css({
+            left : win.width() / 2 - content.outerWidth() / 2,
+            top : 200
+          });          
+          
+          content.css({
+            left : gal.position().left - 3,
+            top : gal.position().top - 105
+          });
+          
+          nav.css({
+            left : gal.position().left + 15,
+            top : gal.position().top - 135
+          });
+
+          name.css({
+            left : gal.position().left + 415,
+            top : gal.position().top - 145
+          });
+          
+        }).trigger("resize");
+        
+        var slide = $("#slide");
+        
+        $(".link").each(function(i){
+          
+          $(this).click(function(){
+            slide.animate({
+              marginTop : - i * 100
+            });
+          });
+          
+        });
+        
+        $(".box").click(function(){
+          gal.fadeOut(0)
+                 .fadeIn(500)
+                 .html($(this).next().html());
+        });        
+
+       $(".link").hover(function(){
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+        
+       $(".box").hover(function(){
+					$(this).stop().animate({ opacity: 0.3 }, "450");
+					},
+		
+					function () {
+					$(this).stop().animate({ opacity: 1.0 }, "600");
+					});
+        
+      });
+    </script>
+    <style>
+      
+      body,html{
+        font-family : futura;
+        color: #444;
+        
+      }
+      h1{
+        font-size: 1em;
+      }
+      
+      .link{
+        float: left;
+        width: 107px;
+      }
+      
+      #name{
+        font-size: 1.7em;
+        position:absolute;
+        height: 100px;
+      }
+      
+      #nav{
+        position : absolute;
+        height: 40px;
+        width: 100%;
+      }
+      
+      #content{
+        overflow: hidden;        
+        position : relative; 
+        width : 600px;
+        height : 100px;
+        padding : 5px;
+      }
+      
+      #gal{
+        position: absolute;
+        width: 590px;
+        height: 500px;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .box{
+        position : relative;
+        float : left;
+        width : 90px;
+        height : 90px;
+        margin : 5px;
+        color : white;
+        cursor : pointer;        
+      }
+      .hidden{
+        display : none; 
+      }
+      
+      .section{
+        height: 100px;
+      }
+      img{
+        width: 100%;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    
+    <div id="name">
+      Robert Straight
+    </div>
+    <div id="nav">
+        <div class="link">Paintings</div>
+        <div class="link">Wood Clusters</div>
+    </div>
+
+    <div id="content">
+      
+      <div id="slide">
+        
+        <div class="section">
+          
+          <div class="box"><img src="img/tDSC_0469.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0469.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0470.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0470.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0473.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0473.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0476.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0476.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0477.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0477.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0478.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0478.jpg"></div>
+          
+        </div>
+        
+        <div class="section">      
+          
+          <div class="box"><img src="img/tDSC_0078.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0078.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0046.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0046.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0468.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0468.jpg"></div>
+          
+          <div class="box"><img src="img/tDSC_0023.jpg"></div> 
+          <div class="hidden"><img src="img/DSC_0023.jpg"></div>
+          
+          <div class="box"><img src="img/tCSC_0015.jpg"></div> 
+          <div class="hidden"><img src="img/CSC_0015.jpg"></div>
+          
+          <div class="box"><img src="img/tCSC_0013.jpg"></div> 
+          <div class="hidden"><img src="img/CSC_0013.jpg"></div>
+          
+        </div>
+
+      </div>  
+      
+    </div>
+    
+      <div id="gal">
+        <img src="img/DSC_0469.jpg">
+      </div>      
+      
+  </body>
+</html>
